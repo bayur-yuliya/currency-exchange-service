@@ -13,15 +13,15 @@ docker run -d -p 5672:5672 rabbitmq
 4. Run worker
 Mac & Linux
 ```
-celery -A hilel12 worker -l INFO
+celery -A config worker -l INFO
 ```
 Windows
 ```
-celery -A hilel12 worker -l INFO --pool=solo
+celery -A config worker -l INFO --pool=solo
 ```
 5. Run celery beat
 ```
-celery -A hilel12 beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+celery -A config beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
 ```
 6. Run Django web-server
 ```
